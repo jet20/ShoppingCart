@@ -8,6 +8,13 @@
 	- [x] Automapper
 	- [x] jQuery UI
 - [x] BundleConfig
+- [x] Models
+	- Author
+	- Book
+	- Category
+	- Cart
+	- CartItem
+
 
 # 实践和技巧
 - BundleConfig里嵌入资源命名规则为(camel)：shoppingCart
