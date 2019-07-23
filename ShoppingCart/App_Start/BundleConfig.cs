@@ -8,9 +8,10 @@ namespace ShoppingCart
         // For more information on bundling, visit https://go.microsoft.com/fwlink/?LinkId=301862
         public static void RegisterBundles(BundleCollection bundles)
         {
-            bundles.Add(new ScriptBundle("~/bundles/ShoppingCart").Include(
+            bundles.Add(new ScriptBundle("~/bundles/shoppingCart").Include(
                 "~/Scripts/jquery-{version}.js",
                 "~/Scripts/jquery.validate*",
+                "~/Scripts/jquery-ui-1.12.1.js",
                 "~/Scripts/knockout-3.5.0.debug.js",
                 "~/Scripts/bootstrap.js"));
 
@@ -31,6 +32,8 @@ namespace ShoppingCart
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
                       "~/Content/site.css"));
+
+            BundleTable.EnableOptimizations = false;
         }
     }
 }

@@ -6,7 +6,9 @@
 	- [x] knockoutjs
 	- [x] Entity Framework
 	- [x] Automapper
-- [ ] BundleConfig
+	- [x] jQuery UI
+- [x] BundleConfig
 
 # 实践和技巧
-
+- BundleConfig里嵌入资源命名规则为(camel)：shoppingCart
+- 启用BundleConfig的开关：BundleTable.EnableOptimizations = false;
