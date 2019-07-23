@@ -1,4 +1,6 @@
-﻿using ShoppingCart.Models;
+﻿using AutoMapper;
+using AutoMapper.Configuration;
+using ShoppingCart.Models;
 using ShoppingCart.ViewModels;
 
 namespace ShoppingCart
@@ -7,11 +9,19 @@ namespace ShoppingCart
     {
         public static void RegisterMappers()
         {
-            AutoMapper.Mapper.Initialize(cfg =>
-            {
-                cfg.CreateMap<Cart, CartViewModel>();
-                cfg.CreateMap<CartItem, CartItemViewModel>();
-            });
+            var cfg = new MapperConfigurationExpression();
+            cfg.AddProfile(new ShoppingCartProfile());
+            Mapper.Initialize(cfg);
+        }
+    }
+
+    public class ShoppingCartProfile : Profile
+    {
+        public ShoppingCartProfile()
+        {
+            CreateMap<Cart, CartViewModel>();
+            CreateMap<CartItem, CartItemViewModel>();
+            CreateMap<Category, CategoryViewModel>();
         }
     }
 }

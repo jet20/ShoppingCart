@@ -143,7 +143,9 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\BooksController.cs" />
     <Compile Include="Controllers\CartsController.cs" />
+    <Compile Include="Services\CategoryService.cs" />
     <Compile Include="Helpers\HtmlHelper.cs" />
     <Compile Include="Services\CartService.cs" />
     <Compile Include="Controllers\CategoriesController.cs" />
