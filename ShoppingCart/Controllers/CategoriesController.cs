@@ -4,9 +4,10 @@ namespace ShoppingCart.Controllers
 {
     public class CategoriesController : Controller
     {
+        [ChildActionOnly]
         public ActionResult Menu(int selectCategoryId)
         {
-            throw new System.NotImplementedException();
+            return PartialView();
         }
     }
 }

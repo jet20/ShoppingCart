@@ -21,6 +21,8 @@ namespace ShoppingCart
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
 
+            AutoMapperConfig.RegisterMappers();
+
             var dbContext = new ShoppingCartContext();
             Database.SetInitializer(new DataInitialization());
             dbContext.Database.Initialize(true);
