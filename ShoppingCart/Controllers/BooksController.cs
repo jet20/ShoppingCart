@@ -12,7 +12,9 @@ namespace ShoppingCart.Controllers
 
         public ActionResult Index(int categoryId)
         {
-            throw new System.NotImplementedException();
+            var books = _bookService.GetByCategoryId(categoryId);
+            var list = Mapper.Map<List<BookViewModel>>(books);
+            return View(list);
         }
 
         [ChildActionOnly]
@@ -23,6 +25,13 @@ namespace ShoppingCart.Controllers
             return PartialView(list);
         }
 
+        public ActionResult Details(int id)
+        {
+            var book = _bookService.GetById(id);
+            var model = Mapper.Map<BookViewModel>(book);
+            return View(model);
+        }
+
         protected override void Dispose(bool disposing)
         {
             if (disposing)
@@ -30,11 +39,6 @@ namespace ShoppingCart.Controllers
                 _bookService.Dispose();
             }
             base.Dispose(disposing);
-        }
-
-        public ActionResult Details(int id)
-        {
-            throw new System.NotImplementedException();
         }
     }
 

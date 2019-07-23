@@ -1,0 +1,16 @@
+﻿@model System.Collections.Generic.List<ShoppingCart.ViewModels.BookViewModel>
+
+@{
+    ViewBag.Title = "书籍";
+}
+
+<h2>书籍</h2>
+
+@if (Model.Count > 0)
+{
+    @Html.Partial("_List", Model)
+}
+else
+{
+    <div class="alert alert-info">请静候佳音</div>
+}

@@ -143,6 +143,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\Api\CartItemsController.cs" />
     <Compile Include="Controllers\BooksController.cs" />
     <Compile Include="Controllers\CartsController.cs" />
     <Compile Include="Services\BookService.cs" />
@@ -220,6 +221,8 @@
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
+    <Content Include="Scripts\handlebars-v4.1.2.js" />
+    <Content Include="Scripts\handlebars.runtime-v4.1.2.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
     <Content Include="Scripts\jquery-3.3.1.slim.js" />
@@ -235,6 +238,8 @@
     <Content Include="Scripts\knockout-3.5.0.js" />
     <Content Include="Scripts\knockout.custom.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\ViewModels\BookDetailViewModel.js" />
+    <Content Include="Scripts\ViewModels\CartItemViewModel.js" />
     <Content Include="Scripts\ViewModels\CartSummaryViewModel.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -254,6 +259,9 @@
     <Content Include="Views\Categories\Menu.cshtml" />
     <Content Include="Views\Books\Featured.cshtml" />
     <Content Include="Views\Books\_List.cshtml" />
+    <Content Include="Views\Books\Index.cshtml" />
+    <Content Include="Views\Books\Details.cshtml" />
+    <Content Include="Views\Books\_CartItemForm.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -21,6 +21,7 @@ namespace ShoppingCart
         {
             CreateMap<Cart, CartViewModel>();
             CreateMap<CartItem, CartItemViewModel>();
+            CreateMap<CartItemViewModel, CartItem>();
             CreateMap<Category, CategoryViewModel>();
             CreateMap<Book, BookViewModel>();
             CreateMap<Author, AuthorViewModel>();

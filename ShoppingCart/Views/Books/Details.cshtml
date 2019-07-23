@@ -1,0 +1,38 @@
+﻿@using ShoppingCart.Helpers
+@model ShoppingCart.ViewModels.BookViewModel
+
+@{
+    ViewBag.Title = Model.Title;
+}
+
+<h1>@Model.Title</h1>
+
+<div id="bookDetails" class="row">
+    <div class="col-md-2">
+        <img src="@Model.ImageUrl" alt="@Model.Title" title="@Model.Title" class="img-rounded" />
+    </div>
+    <div class="col-md-5 col-md-offset-1">
+        <h3>@Model.Author.FullName</h3>
+        <p>现价：￥@Model.SalePrice</p>
+        <p>原价：<span style="text-decoration: line-through">￥@Model.ListPrice</span></p>
+        <p class="label label-success">节省：@(Model.SavePercentage) %</p>
+        <p>@Model.Description</p>
+    </div>
+    <div class="col-md-2 col-md-offset-2 bg-info">
+        <upsert-cart-item params="cartItem: cartItem, showButton: true"></upsert-cart-item>
+    </div>
+</div>
+
+@Html.Partial("_CartItemForm")
+
+@section scripts
+{
+    @Scripts.Render("~/Scripts/ViewModels/BookDetailViewModel.js", 
+        "~/Scripts/ViewModels/CartItemViewModel.js")
+    <script>
+        var model = @Html.HtmlConvertToJson(Model);
+
+        var bookDetailModel = new BookDetailViewModel(model);
+        ko.applyBindings(bookDetailModel, document.getElementById('bookDetails'));
+    </script>
+}

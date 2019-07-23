@@ -22,6 +22,7 @@
 	- CartItemViewModel
 - [x] 布局 Layout.cshtml
 - [x] 主页
+- [x] 图书详情
 
 # 实践和技巧
 - BundleConfig里嵌入资源命名规则为(camel)：shoppingCart

@@ -1,0 +1,32 @@
+﻿@using ShoppingCart.ViewModels
+@{
+    var cartItem = new CartItemViewModel();
+}
+
+<template id="cart-item-form">
+    <form class="center-block" data-bind="submit: upsertCartItem">
+        <div class="form-group">
+            <!-- ko ifnot: isAdding-->
+            @Html.LabelFor(m => cartItem.Quantity)
+            <!-- /ko -->
+            <div class="input-group input-group-sm">
+                <div class="col-sm-8">
+                    @Html.TextBoxFor(m => cartItem.Quantity, new {@class="form-control", data_bind="textInput: cartItem.quantity"})
+                    @Html.ValidationMessageFor(m => cartItem.Quantity, "", new {@class="text-danger"})
+                </div>
+            </div>
+        </div>
+        <div class="form-group" data-bind="isDirty: cartItem.quantity">
+            <button type="submit" class="btn btn-primary" data-bind="visible: !sending()">添加到购物车</button>
+        </div>
+    </form>
+    
+    <div class="progress" data-bind="visible: sending">
+        <div class="progress-bar progress-bar-success progress-striped active" role="progressbar"
+             aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"
+             style="width: 100%;">
+            <span class="sr-only"></span>
+        </div>
+    </div>
+</template>
+
