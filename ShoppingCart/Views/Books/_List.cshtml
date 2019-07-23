@@ -1,0 +1,42 @@
+﻿@model System.Collections.Generic.List<ShoppingCart.ViewModels.BookViewModel>
+
+@{
+    const int maxPerRow = 3;
+    var rows = Model.Count / maxPerRow + (Model.Count % maxPerRow > 0 ? 1 : 0);
+
+}
+
+@for (var row = 0; row < rows; row++)
+{
+    <div class="row">
+        @for (var j = 0; j < maxPerRow; j++)
+        {
+            var index = row * maxPerRow + j;
+            if (index >= Model.Count)
+            {
+                <div class="col-xs-4"></div>
+            }
+            else
+            {
+                var book = Model[index];
+                var url = Url.Action("Details", "Books", new { book.Id });
+                <div class="col-xs-4">
+                    <a href="@url" class="thumbnail">
+                        <img src="@book.ImageUrl" alt="@book.Title" title="@book.Title" />
+                        <span class="label label-success">节省 @(book.SavePercentage)%</span>
+                    </a>
+
+                    <h4>
+                        <a href="@url">@book.Title</a>
+                    </h4>
+                    <p>@book.Author.FullName</p>
+                    <p>现价：￥@book.SalePrice</p>
+                    <p>原价：<span style="text-decoration: line-through">￥@book.ListPrice</span></p>
+                </div>
+
+            }
+
+        }
+    </div>
+}
+

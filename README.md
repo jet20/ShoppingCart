@@ -21,7 +21,11 @@
 	- CartViewModel
 	- CartItemViewModel
 - [x] 布局 Layout.cshtml
+- [x] 主页
 
 # 实践和技巧
 - BundleConfig里嵌入资源命名规则为(camel)：shoppingCart
 - 启用BundleConfig的开关：BundleTable.EnableOptimizations = false;
+
+# 问题
+- @Html.Action vs @Html.Partial

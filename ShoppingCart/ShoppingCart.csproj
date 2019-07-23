@@ -145,6 +145,7 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\BooksController.cs" />
     <Compile Include="Controllers\CartsController.cs" />
+    <Compile Include="Services\BookService.cs" />
     <Compile Include="Services\CategoryService.cs" />
     <Compile Include="Helpers\HtmlHelper.cs" />
     <Compile Include="Services\CartService.cs" />
@@ -251,6 +252,8 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Carts\Summary.cshtml" />
     <Content Include="Views\Categories\Menu.cshtml" />
+    <Content Include="Views\Books\Featured.cshtml" />
+    <Content Include="Views\Books\_List.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
